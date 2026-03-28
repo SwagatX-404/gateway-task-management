@@ -3,9 +3,29 @@
 ## Database Configuration 
 - [application.yaml] file
 ```bash 
-xyz123
+
+server:
+    port: 5000
+
+spring:
+  application:
+    name: GATEWAY-SERVICE
+cloud:
+  gateway:
+    mvc:
+      routes:
 
 
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8070/eureka/
 ```
 
 ## 👤 Author
