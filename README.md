@@ -16,6 +16,21 @@ cloud:
       routes:
 
 
+default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials, Access-Control-Allow-Origin
+      globalcors:
+        cors-Configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - PATCH
+              - DELETE
+            allowedHeaders: "*"
+
+
 
 
 eureka:
