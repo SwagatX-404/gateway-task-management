@@ -14,6 +14,23 @@ cloud:
   gateway:
     mvc:
       routes:
+         - id: USER-SERVICE
+          uri:
+            lb://USER-SERVICE
+          predicates:
+            - Path=/auth/**, /users/**, /api/users/**
+
+        - id: TASK-SERVICE
+          uri:
+            lb://TASK-SERVICE
+          predicates:
+            - Path=/api/tasks/**, /tasks/**
+
+        - id: SUBMISSION-SERVICE
+          uri:
+            lb://SUBMISSION-SERVICE
+          predicates:
+            - Path=/api/submissions/**, /submissions/**
 
 
 default-filters:
